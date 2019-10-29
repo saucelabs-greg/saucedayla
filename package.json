@@ -1,0 +1,31 @@
+{
+  "name": "webdriverio-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "step1": "wdio step1local.wdio.conf.js",
+    "step2": "wdio step2sauce.wdio.conf.js",
+    "step3": "wdio step3exdebugperf.wdio.conf.js",
+    "step4": "wdio step4headless.wdio.conf.js",
+    "step5": "wdio step5rdc.wdio.conf.js",
+    "step6": "wdio step6visual.wdio.conf.js",
+    "step7": "wdio sauce.wdio.conf.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@wdio/cli": "^5.14.5",
+    "chai": "^4.2.0"
+  },
+  "devDependencies": {
+    "@wdio/local-runner": "^5.14.5",
+    "@wdio/mocha-framework": "^5.14.4",
+    "@wdio/sauce-service": "^5.14.0",
+    "@wdio/spec-reporter": "^5.14.5",
+    "@wdio/sync": "^5.14.4",
+    "chromedriver": "^77.0.0",
+    "wdio-chromedriver-service": "^5.0.2"
+  }
+}
