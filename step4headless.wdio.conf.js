@@ -16,7 +16,7 @@ exports.config = {
     // values you need to put in here in order to connect to these services.
     //
     user: process.env.SAUCE_USERNAME,
-    key: process.env.SAUCE_ACCESS_KEY,
+    key: process.env.SAUCE_HEADLESS_ACCESS_KEY,
     //
     // If you run your tests on SauceLabs you can specify the region you want to run your tests
     // in via the `region` property. Available short handles for regions are `us` (default) and `eu`.
@@ -64,16 +64,28 @@ exports.config = {
     // https://docs.saucelabs.com/reference/platforms-configurator
     //
     capabilities: [
-
-        // {browserName: 'firefox',
-        //     platformName: 'Windows 10',
-        //     browserVersion: 'latest',
-        // },
+    //  {browserName: 'Firefox', platform: 'linux', version: 'latest', build: process.env.BUILD_TAG},
+    //     {browserName: 'Firefox',
+    //         platformName: 'linux',
+    //         browserVersion: 'latest',
+    //         build: process.env.BUILD_TAG
+    //     },
         // 'sauce:options': {'seleniumVersion': '3.14.0'}
         {browserName: 'chrome',
             platformName: 'linux',
             browserVersion: 'latest',
-            name: 'sauce day LA'}
+            build: process.env.BUILD_TAG},
+  //
+        {browserName: 'chrome',
+                platformName: 'linux',
+                browserVersion: 'latest-1',
+                build: process.env.BUILD_TAG},
+    //
+          {browserName: 'chrome',
+                    platformName: 'linux',
+                    browserVersion: 'latest-2',
+                    build: process.env.BUILD_TAG}
+    //
         // {browserName: 'internet explorer',
         //     platformName: 'Windows 10',
         //     browserVersion: '11.0',
@@ -133,7 +145,7 @@ exports.config = {
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
     services: ['Sauce'],
-    
+
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
     // see also: https://webdriver.io/docs/frameworks.html
@@ -149,7 +161,7 @@ exports.config = {
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter.html
     reporters: ['spec'],
- 
+
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
@@ -219,7 +231,7 @@ exports.config = {
      * afterEach in Mocha)
      */
     // afterHook: function () {
-    // }, 
+    // },
     /**
      * Function to be executed after a test (in Mocha/Jasmine) or a step (in Cucumber) starts.
      * @param {Object} test test details
